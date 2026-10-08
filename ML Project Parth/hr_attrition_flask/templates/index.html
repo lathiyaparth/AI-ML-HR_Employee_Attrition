@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Employee Attrition Prediction</title>
+</head>
+
+<body style="text-align:center;">
+
+<h2 style="color:green;">HR Employee Attrition Prediction</h2>
+
+<form method="POST">
+
+    Age:
+    <input type="number" name="Age" required>
+    <br><br>
+
+    Daily Rate:
+    <input type="number" name="DailyRate" required>
+    <br><br>
+
+    Distance From Home:
+    <input type="number" name="DistanceFromHome" required>
+    <br><br>
+
+    Education:
+    <input type="number" name="Education" min="1" max="5" required>
+    <br><br>
+
+    Employee Count:
+    <input type="number" name="EmployeeCount" value="1" required>
+    <br><br>
+
+    Employee Number:
+    <input type="number" name="EmployeeNumber" required>
+    <br><br>
+
+    Environment Satisfaction:
+    <input type="number" name="EnvironmentSatisfaction" min="1" max="4" required>
+    <br><br>
+
+    Gender:
+    <select name="Gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+    <br><br>
+
+    Hourly Rate:
+    <input type="number" name="HourlyRate" required>
+    <br><br>
+
+    Job Involvement:
+    <input type="number" name="JobInvolvement" min="1" max="4" required>
+    <br><br>
+
+    Job Level:
+    <input type="number" name="JobLevel" min="1" max="5" required>
+    <br><br>
+
+    Job Satisfaction:
+    <input type="number" name="JobSatisfaction" min="1" max="4" required>
+    <br><br>
+
+    Monthly Income:
+    <input type="number" name="MonthlyIncome" required>
+    <br><br>
+
+    Monthly Rate:
+    <input type="number" name="MonthlyRate" required>
+    <br><br>
+
+    Number Of Companies Worked:
+    <input type="number" name="NumCompaniesWorked" required>
+    <br><br>
+
+    Percent Salary Hike:
+    <input type="number" name="PercentSalaryHike" required>
+    <br><br>
+
+    Performance Rating:
+    <input type="number" name="PerformanceRating" min="1" max="4" required>
+    <br><br>
+
+    Relationship Satisfaction:
+    <input type="number" name="RelationshipSatisfaction" min="1" max="4" required>
+    <br><br>
+
+    Standard Hours:
+    <input type="number" name="StandardHours" value="80" required>
+    <br><br>
+
+    Stock Option Level:
+    <input type="number" name="StockOptionLevel" min="0" max="3" required>
+    <br><br>
+
+    Total Working Years:
+    <input type="number" name="TotalWorkingYears" required>
+    <br><br>
+
+    Training Times Last Year:
+    <input type="number" name="TrainingTimesLastYear" required>
+    <br><br>
+
+    Work Life Balance:
+    <input type="number" name="WorkLifeBalance" min="1" max="4" required>
+    <br><br>
+
+    Years At Company:
+    <input type="number" name="YearsAtCompany" required>
+    <br><br>
+
+    Years In Current Role:
+    <input type="number" name="YearsInCurrentRole" required>
+    <br><br>
+
+    Years Since Last Promotion:
+    <input type="number" name="YearsSinceLastPromotion" required>
+    <br><br>
+
+    Years With Current Manager:
+    <input type="number" name="YearsWithCurrManager" required>
+    <br><br>
+
+    Business Travel:
+    <select name="BusinessTravel">
+        <option>Travel_Rarely</option>
+        <option>Travel_Frequently</option>
+        <option>Non-Travel</option>
+    </select>
+    <br><br>
+
+    Department:
+    <select name="Department">
+        <option>Research & Development</option>
+        <option>Sales</option>
+        <option>Human Resources</option>
+    </select>
+    <br><br>
+
+    Education Field:
+    <select name="EducationField">
+        <option>Life Sciences</option>
+        <option>Medical</option>
+        <option>Marketing</option>
+        <option>Technical Degree</option>
+        <option>Other</option>
+    </select>
+    <br><br>
+
+    Job Role:
+    <select name="JobRole">
+        <option>Sales Executive</option>
+        <option>Research Scientist</option>
+        <option>Laboratory Technician</option>
+        <option>Manufacturing Director</option>
+        <option>Healthcare Representative</option>
+        <option>Manager</option>
+        <option>Sales Representative</option>
+        <option>Research Director</option>
+        <option>Human Resources</option>
+    </select>
+    <br><br>
+
+    Marital Status:
+    <select name="MaritalStatus">
+        <option>Single</option>
+        <option>Married</option>
+        <option>Divorced</option>
+    </select>
+    <br><br>
+
+    Over Time:
+    <select name="OverTime">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <br><br>
+
+    <button type="submit">PREDICT</button>
+
+</form>
+
+{% if result %}
+<br>
+<h2>Prediction Result</h2>
+
+<h3>Prediction: {{ result.prediction }}</h3>
+<h3>Attrition Probability: {{ result.probability }} %</h3>
+<h3>Risk Level: {{ result.risk }}</h3>
+{% endif %}
+
+</body>
+</html>
